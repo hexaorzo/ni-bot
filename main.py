@@ -100,7 +100,8 @@ async def on_interaction(interaction):
         category = discord.utils.get(guild.categories, id=1082247198059802644)
         channel = await guild.create_text_channel(f'{ticket_emoji} t-{user.name}', category=category, overwrites=overwrites)
         await channel.set_permissions(user, send_messages=True, read_messages=True, add_reactions=True, embed_links=True, attach_files=True, read_message_history=True, external_emojis=True)
-
+        await channel.set_permissions(discord.utils.get(interaction.guild.roles, id = 906249753598255176), send_messages=True, read_messages=True, add_reactions=True, embed_links=True, attach_files=True, read_message_history=True, external_emojis=True)
+        
         await channel.send(embed=discord.Embed(title=f'**Ticket information**', description=f'**Created by:** {user.mention}\n**Type:** {ticket_type_name}\n**Email:** {email}\n**Subject:** {subject}\n**Description:** {description}', color=embed_color), view=discord.ui.View().add_item(discord.ui.Button(custom_id='close_ticket', label="Close Ticket", style=discord.ButtonStyle.red, emoji='🔒')))
         await channel.send(f'<@&906249753598255176>')
     
