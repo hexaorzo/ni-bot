@@ -38,7 +38,7 @@ async def onboard(ctx):
 
     await ctx.send(
         embed=embed,
-        view=discord.ui.View().add_item(discord.ui.Button(custom_id='Onboard', label="Onboard", style=discord.ButtonStyle.blurple, emoji=emoji)))
+        view=discord.ui.View().add_item(discord.ui.Button(custom_id='Onboard', label="Let's Go!", style=discord.ButtonStyle.blurple, emoji=emoji)))
 
 @bot.event
 async def on_interaction(interaction):
