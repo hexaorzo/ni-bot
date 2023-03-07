@@ -34,6 +34,11 @@ async def onboard(ctx):
     # emoji = await ctx.guild.fetch_emoji(936698473267490816)
     embed = discord.Embed(title='Welcome to Neverinstall Discord server!',
                           description="**Press the button below** 👇 to gain access to the server", color=embed_color)
+    emoji = await ctx.guild.fetch_emoji(936698473267490816)
+
+    await ctx.send(
+        embed=embed,
+        view=discord.ui.View().add_item(discord.ui.Button(custom_id='Onboard', label="Onboard", style=discord.ButtonStyle.blurple, emoji=emoji))
 
 @bot.event
 async def on_interaction(interaction):
