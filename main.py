@@ -102,6 +102,7 @@ async def on_interaction(interaction):
         await channel.set_permissions(user, send_messages=True, read_messages=True, add_reactions=True, embed_links=True, attach_files=True, read_message_history=True, external_emojis=True)
 
         await channel.send(embed=discord.Embed(title=f'**Ticket information**', description=f'**Created by:** {user.mention}\n**Type:** {ticket_type_name}\n**Email:** {email}\n**Subject:** {subject}\n**Description:** {description}', color=embed_color), view=discord.ui.View().add_item(discord.ui.Button(custom_id='close_ticket', label="Close Ticket", style=discord.ButtonStyle.red, emoji='🔒')))
+        await channel.send(f'<@&906249753598255176>')
     
         await interaction.response.edit_message(
             content=f'> {channel.mention} has been created for you! 🎉',
